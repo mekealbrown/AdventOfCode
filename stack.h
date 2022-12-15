@@ -1,3 +1,4 @@
+#include <iostream>
 template <typename T>
 class Stack
 {
@@ -37,4 +38,24 @@ class Stack
             return data;
         }
         bool isEmpty() {return head == nullptr;}
+        void print()
+        {
+            Node *temp = head;
+            while (temp)
+            {
+                std::cout << temp->data << " ";
+                temp = temp->next;
+            }
+        }
+        int getSize()
+        {
+            int size = 0;
+            Node *temp = head;
+            while (temp)
+            {
+                ++size;
+                temp = temp->next;
+            }
+            return size;
+        }
 };     
